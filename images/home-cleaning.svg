@@ -1,0 +1,24 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#E1F5EE"/>
+  <rect x="0" y="210" width="400" height="90" fill="#9FE1CB"/>
+  <!-- house -->
+  <rect x="120" y="120" width="160" height="100" fill="#FFFFFF" stroke="#085041" stroke-width="3"/>
+  <polygon points="100,120 200,60 300,120" fill="#0F6E56" stroke="#085041" stroke-width="3"/>
+  <rect x="225" y="80" width="18" height="30" fill="#085041"/>
+  <rect x="175" y="160" width="30" height="60" fill="#5DCAA5"/>
+  <rect x="220" y="150" width="40" height="35" fill="#E1F5EE" stroke="#085041" stroke-width="2"/>
+  <line x1="240" y1="150" x2="240" y2="185" stroke="#085041" stroke-width="2"/>
+  <line x1="220" y1="167" x2="260" y2="167" stroke="#085041" stroke-width="2"/>
+  <!-- sparkles -->
+  <g fill="#EF9F27">
+    <path d="M75 95 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z"/>
+    <path d="M315 150 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z"/>
+    <path d="M60 160 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z"/>
+  </g>
+  <!-- spray bottle -->
+  <g transform="translate(295,190)">
+    <rect x="0" y="20" width="26" height="40" rx="4" fill="#1D9E75"/>
+    <rect x="6" y="0" width="14" height="20" fill="#085041"/>
+    <rect x="-6" y="2" width="14" height="6" fill="#085041"/>
+  </g>
+</svg>

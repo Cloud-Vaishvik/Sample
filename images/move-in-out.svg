@@ -1,0 +1,25 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#E1F5EE"/>
+  <rect x="0" y="230" width="400" height="70" fill="#9FE1CB"/>
+  <!-- empty room outline -->
+  <polyline points="80,230 80,90 200,40 320,90 320,230" fill="none" stroke="#085041" stroke-width="3"/>
+  <rect x="80" y="90" width="240" height="140" fill="#FFFFFF" stroke="#085041" stroke-width="3"/>
+  <line x1="80" y1="90" x2="200" y2="40" stroke="#085041" stroke-width="3"/>
+  <line x1="200" y1="40" x2="320" y2="90" stroke="#085041" stroke-width="3"/>
+  <!-- boxes -->
+  <g>
+    <rect x="110" y="170" width="55" height="55" fill="#1D9E75" stroke="#085041" stroke-width="2.5"/>
+    <line x1="110" y1="195" x2="165" y2="195" stroke="#085041" stroke-width="2"/>
+    <line x1="137" y1="170" x2="137" y2="195" stroke="#085041" stroke-width="2"/>
+    <rect x="175" y="190" width="40" height="40" fill="#5DCAA5" stroke="#085041" stroke-width="2.5"/>
+    <line x1="175" y1="210" x2="215" y2="210" stroke="#085041" stroke-width="2"/>
+    <rect x="225" y="165" width="50" height="65" fill="#0F6E56" stroke="#085041" stroke-width="2.5"/>
+    <line x1="225" y1="197" x2="275" y2="197" stroke="#085041" stroke-width="2"/>
+    <line x1="250" y1="165" x2="250" y2="197" stroke="#085041" stroke-width="2"/>
+  </g>
+  <!-- sparkles -->
+  <g fill="#EF9F27">
+    <path d="M320 110 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z"/>
+    <path d="M95 130 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z"/>
+  </g>
+</svg>
