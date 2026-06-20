@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neat Cleaning Pro | Professional Home & Office Cleaning</title>
+<meta name="description" content="Neat Cleaning Pro offers professional, eco-friendly home and office cleaning in Van Nuys, CA and surrounding areas. Get a free quote today.">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/@tabler/icons-webfont/2.47.0/tabler-icons.min.css">
+<style>
+  :root{
+    --green-900:#04342C;
+    --green-800:#085041;
+    --green-700:#0F6E56;
+    --green-500:#1D9E75;
+    --green-300:#5DCAA5;
+    --green-100:#9FE1CB;
+    --green-50:#E1F5EE;
+    --amber:#EF9F27;
+    --text-primary:#171717;
+    --text-secondary:#5f5e5a;
+    --border:rgba(0,0,0,0.08);
+    --bg-secondary:#F6F5F1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text-primary);line-height:1.5;background:#fff}
+  img{max-width:100%}
+  a{text-decoration:none;color:inherit}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  /* Header */
+  header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:100}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:600;color:var(--green-700)}
+  .logo i{font-size:24px}
+  nav ul{display:flex;gap:28px;list-style:none}
+  nav a{font-size:15px;font-weight:500;color:var(--text-primary)}
+  nav a:hover{color:var(--green-700)}
+  .nav-cta{display:flex;align-items:center;gap:16px}
+  .phone-link{font-size:15px;font-weight:600;color:var(--green-700);display:none}
+  .btn{display:inline-block;border-radius:8px;font-weight:600;font-size:15px;cursor:pointer;border:none;padding:11px 22px;text-align:center}
+  .btn-primary{background:var(--green-700);color:#fff}
+  .btn-primary:hover{background:var(--green-800)}
+  .btn-outline-white{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.5)}
+  .btn-outline-white:hover{background:rgba(255,255,255,0.1)}
+  .mobile-toggle{display:none;background:none;border:none;font-size:26px;color:var(--green-700);cursor:pointer}
+
+  @media (max-width:840px){
+    nav{display:none}
+    .nav-cta .btn-primary{display:none}
+    .phone-link{display:none}
+    .mobile-toggle{display:block}
+  }
+
+  /* Hero */
+  .hero{background:linear-gradient(135deg,var(--green-700),var(--green-800));color:#fff;padding:72px 24px 76px;text-align:center}
+  .hero-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:999px;padding:6px 16px;font-size:13px;margin-bottom:20px;color:var(--green-100)}
+  .hero h1{font-size:clamp(28px,5vw,46px);font-weight:700;line-height:1.2;margin-bottom:16px}
+  .hero p{font-size:17px;color:var(--green-100);max-width:540px;margin:0 auto 30px;line-height:1.7}
+  .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .hero-btns .btn{font-size:16px;padding:14px 28px}
+  .btn-white{background:#fff;color:var(--green-700)}
+  .btn-white:hover{background:var(--green-50)}
+
+  /* Trust bar */
+  .trust-bar{background:var(--green-900);padding:20px 24px;display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+  .trust-item{text-align:center}
+  .trust-num{font-size:24px;font-weight:700;color:var(--green-300)}
+  .trust-label{font-size:13px;color:var(--green-100);margin-top:2px}
+
+  /* Sections */
+  section{padding:64px 24px}
+  .section-inner{max-width:900px;margin:0 auto}
+  .section-label{font-size:13px;font-weight:700;color:var(--green-700);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;text-align:center}
+  .section-title{font-size:clamp(24px,4vw,34px);font-weight:700;margin-bottom:10px;text-align:center}
+  .section-sub{font-size:16px;color:var(--text-secondary);line-height:1.7;margin-bottom:44px;text-align:center;max-width:600px;margin-left:auto;margin-right:auto}
+
+  /* Services */
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .service-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:box-shadow .15s,border-color .15s}
+  .service-card:hover{border-color:var(--green-500);box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+  .service-img-wrap{width:100%;height:160px;background:var(--green-50);overflow:hidden}
+  .service-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+  .service-body{padding:20px 22px}
+  .service-icon{width:44px;height:44px;background:var(--green-50);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .service-icon i{font-size:22px;color:var(--green-700)}
+  .service-card h3{font-size:17px;font-weight:600;margin-bottom:6px}
+  .service-card p{font-size:14px;color:var(--text-secondary);line-height:1.6}
+
+  /* Steps */
+  .alt-bg{background:var(--bg-secondary)}
+  .steps{display:flex;flex-direction:column;gap:0;max-width:680px;margin:0 auto}
+  .step{display:flex;gap:22px;padding:24px 0;border-bottom:1px solid var(--border)}
+  .step:last-child{border-bottom:none}
+  .step-num{width:40px;height:40px;min-width:40px;border-radius:50%;background:var(--green-50);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:var(--green-700)}
+  .step-content h3{font-size:18px;font-weight:600;margin-bottom:6px}
+  .step-content p{font-size:15px;color:var(--text-secondary);line-height:1.6}
+
+  /* Reviews */
+  .reviews-wrap{overflow:hidden;position:relative;margin:0 -24px}
+  .reviews-wrap::before,.reviews-wrap::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
+  .reviews-wrap::before{left:0;background:linear-gradient(to right,#fff,transparent)}
+  .reviews-wrap::after{right:0;background:linear-gradient(to left,#fff,transparent)}
+  .reviews-track{display:flex;gap:18px;width:max-content;animation:scrollrev 36s linear infinite;padding:0 24px}
+  .reviews-track:hover{animation-play-state:paused}
+  @keyframes scrollrev{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .review-card{min-width:280px;max-width:280px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px 22px;box-shadow:0 2px 8px rgba(0,0,0,0.03)}
+  .stars{color:var(--amber);font-size:14px;margin-bottom:10px;letter-spacing:2px}
+  .review-card p{font-size:14px;line-height:1.65;color:var(--text-primary);margin-bottom:16px;min-height:90px}
+  .reviewer{display:flex;align-items:center;gap:10px}
+  .avatar{width:34px;height:34px;border-radius:50%;background:var(--green-50);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--green-700)}
+  .reviewer-name{font-size:14px;font-weight:600}
+  .reviewer-loc{font-size:12px;color:var(--text-secondary)}
+
+  /* FAQ */
+  .faq-list{max-width:680px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--border);padding:18px 0;cursor:pointer}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:600;gap:12px}
+  .faq-q i{font-size:18px;color:var(--text-secondary);transition:transform .2s;flex-shrink:0}
+  .faq-a{font-size:15px;color:var(--text-secondary);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .25s ease,padding .2s}
+  .faq-item.open .faq-a{max-height:300px;padding-top:12px}
+  .faq-item.open .faq-q i{transform:rotate(180deg)}
+
+  /* Contact / CTA */
+  .cta-section{background:linear-gradient(135deg,var(--green-700),var(--green-800));padding:64px 24px;text-align:center;color:#fff}
+  .cta-section h2{font-size:clamp(24px,4vw,34px);font-weight:700;margin-bottom:14px}
+  .cta-section p{color:var(--green-100);font-size:16px;margin-bottom:30px;line-height:1.7;max-width:500px;margin-left:auto;margin-right:auto}
+  .phone-big{font-size:28px;font-weight:700;color:var(--green-300);display:block;margin-bottom:24px}
+
+  /* Contact form section */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  @media (max-width:760px){.contact-grid{grid-template-columns:1fr}}
+  .contact-info h3{font-size:20px;font-weight:600;margin-bottom:16px}
+  .contact-info p{color:var(--text-secondary);font-size:15px;line-height:1.7;margin-bottom:24px}
+  .info-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;font-size:15px}
+  .info-row i{font-size:20px;color:var(--green-700);width:24px;text-align:center}
+  form{display:flex;flex-direction:column;gap:14px}
+  form input,form select,form textarea{
+    border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:15px;font-family:inherit;width:100%;background:#fff;color:var(--text-primary)
+  }
+  form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--green-500);box-shadow:0 0 0 3px var(--green-50)}
+  form textarea{resize:vertical;min-height:100px}
+  form label{font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:-8px}
+  .form-status{font-size:14px;margin-top:6px;display:none}
+
+  /* Footer */
+  footer{background:var(--green-900);color:var(--green-100);padding:44px 24px 28px}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;max-width:1100px;margin:0 auto 32px}
+  @media (max-width:680px){.footer-grid{grid-template-columns:1fr;gap:24px}}
+  .footer-logo{display:flex;align-items:center;gap:8px;font-size:17px;font-weight:700;color:#fff;margin-bottom:12px}
+  .footer-col h4{color:#fff;font-size:14px;font-weight:600;margin-bottom:14px}
+  .footer-col ul{list-style:none}
+  .footer-col li{margin-bottom:10px;font-size:14px}
+  .footer-col a:hover{color:#fff}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;text-align:center;font-size:13px;color:var(--green-100);max-width:1100px;margin:0 auto}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="#top" class="logo"><i class="ti ti-spray"></i> Neat Cleaning Pro</a>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="phone-link" href="tel:8183107428"><i class="ti ti-phone"></i> (818) 310-7428</a>
+      <a href="#contact" class="btn btn-primary">Get a free quote</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu"><i class="ti ti-menu-2"></i></button>
+    </div>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<section class="hero" style="padding-top:72px">
+  <div class="hero-badge"><i class="ti ti-leaf"></i> Eco-friendly &middot; Background-checked &middot; Insured</div>
+  <h1>Professional cleaning,<br>done right &mdash; every time.</h1>
+  <p>Homes and businesses across the San Fernando Valley trust Neat Cleaning Pro for spotless results using eco-friendly products.</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn btn-white">Get a free quote</a>
+    <a href="tel:8183107428" class="btn btn-outline-white"><i class="ti ti-phone"></i> (818) 310-7428</a>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-num">500+</div><div class="trust-label">Homes cleaned</div></div>
+  <div class="trust-item"><div class="trust-num">4.9&#9733;</div><div class="trust-label">Average rating</div></div>
+  <div class="trust-item"><div class="trust-num">5 yrs</div><div class="trust-label">In business</div></div>
+  <div class="trust-item"><div class="trust-num">24/7</div><div class="trust-label">Available</div></div>
+</div>
+
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">Our services</div>
+    <div class="section-title">Everything your space needs.</div>
+    <div class="section-sub">From deep cleans to recurring maintenance &mdash; transparent flat-rate pricing, no hidden fees.</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="images/home-cleaning.jpg" alt="Home cleaning service">
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="ti ti-building"></i></div>
+          <h3>Home cleaning</h3>
+          <p>Full home deep clean or regular maintenance visits tailored to your schedule.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="images/office-cleaning.jpg" alt="Office cleaning service">
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="ti ti-briefcase"></i></div>
+          <h3>Office cleaning</h3>
+          <p>Keep your workspace fresh, sanitized, and professional for clients and staff.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="images/deep-clean.jpg" alt="Deep cleaning service">
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="ti ti-droplet"></i></div>
+          <h3>Deep clean</h3>
+          <p>A thorough scrub of every corner, baseboard, and surface, top to bottom.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="images/move-in-out.jpg" alt="Move-in move-out cleaning service">
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="ti ti-home"></i></div>
+          <h3>Move-in / move-out</h3>
+          <p>Leave your old place spotless or start fresh in your new one.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="images/window-cleaning.jpg" alt="Window cleaning service">
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="ti ti-window"></i></div>
+          <h3>Window cleaning</h3>
+          <p>Crystal-clear windows, inside and out, streak-free every time.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="images/recurring-plans.jpg" alt="Recurring cleaning plans">
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="ti ti-repeat"></i></div>
+          <h3>Recurring plans</h3>
+          <p>Weekly, biweekly, or monthly visits &mdash; lock in a discounted rate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-label">How it works</div>
+    <div class="section-title">Booked in 3 simple steps.</div>
+    <div class="section-sub">No back-and-forth. Just a clean home.</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Get a free quote</h3>
+          <p>Call us or fill out the form &mdash; we'll give you an upfront price with no surprises.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Pick your date &amp; time</h3>
+          <p>Choose a slot that works for you. We arrive on time, every time.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Enjoy a spotless space</h3>
+          <p>Our eco-friendly team gets to work. You come home to a perfectly clean space.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="section-inner" style="max-width:1100px">
+    <div class="section-label">Customer reviews</div>
+    <div class="section-title">Loved by our customers.</div>
+    <div class="section-sub">Real feedback from customers across Van Nuys and the greater LA area.</div>
+  </div>
+  <div class="reviews-wrap">
+    <div class="reviews-track" id="reviewsTrack">
+      <!-- Set 1 -->
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"They did an amazing job on our home. Every room was spotless and they used products that were safe for our kids and pets. Highly recommend!"</p>
+        <div class="reviewer"><div class="avatar">JM</div><div><div class="reviewer-name">Jessica M.</div><div class="reviewer-loc">Van Nuys, CA</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Neat Cleaning Pro transformed our office. The team was professional, punctual and thorough. We've booked them for monthly visits."</p>
+        <div class="reviewer"><div class="avatar">RT</div><div><div class="reviewer-name">Robert T.</div><div class="reviewer-loc">Sherman Oaks, CA</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Best move-out clean I've ever seen. My landlord was impressed and I got my full deposit back. Worth every penny!"</p>
+        <div class="reviewer"><div class="avatar">SP</div><div><div class="reviewer-name">Sandra P.</div><div class="reviewer-loc">North Hollywood, CA</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I love that they use eco-friendly products. My home smells fresh without harsh chemicals. The team is always on time and so friendly."</p>
+        <div class="reviewer"><div class="avatar">DL</div><div><div class="reviewer-name">Diana L.</div><div class="reviewer-loc">Reseda, CA</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Used them for a deep clean before a big family gathering. The house looked better than when we first moved in. Incredible attention to detail."</p>
+        <div class="reviewer"><div class="avatar">MK</div><div><div class="reviewer-name">Marcus K.</div><div class="reviewer-loc">Panorama City, CA</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Reliable, professional and affordable. We've been on a biweekly plan for 8 months and the quality never drops. Highly trustworthy team."</p>
+        <div class="reviewer"><div class="avatar">AC</div><div><div class="reviewer-name">Ana C.</div><div class="reviewer-loc">Van Nuys, CA</div></div></div>
+      </div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"They did an amazing job on our home. Every room was spotless and they used products that were safe for our kids and pets. Highly recommend!"</p>
+        <div class="reviewer"><div class="avatar">JM</div><div><div class="reviewer-name">Jessica M.</div><div class="reviewer-loc">Van Nuys, CA</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Neat Cleaning Pro transformed our office. The team was professional, punctual and thorough. We've booked them for monthly visits."</p>
+        <div class="reviewer"><div class="avatar">RT</div><div><div class="reviewer-name">Robert T.</div><div class="reviewer-loc">Sherman Oaks, CA</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Best move-out clean I've ever seen. My landlord was impressed and I got my full deposit back. Worth every penny!"</p>
+        <div class="reviewer"><div class="avatar">SP</div><div><div class="reviewer-name">Sandra P.</div><div class="reviewer-loc">North Hollywood, CA</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I love that they use eco-friendly products. My home smells fresh without harsh chemicals. The team is always on time and so friendly."</p>
+        <div class="reviewer"><div class="avatar">DL</div><div><div class="reviewer-name">Diana L.</div><div class="reviewer-loc">Reseda, CA</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Used them for a deep clean before a big family gathering. The house looked better than when we first moved in. Incredible attention to detail."</p>
+        <div class="reviewer"><div class="avatar">MK</div><div><div class="reviewer-name">Marcus K.</div><div class="reviewer-loc">Panorama City, CA</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Reliable, professional and affordable. We've been on a biweekly plan for 8 months and the quality never drops. Highly trustworthy team."</p>
+        <div class="reviewer"><div class="avatar">AC</div><div><div class="reviewer-name">Ana C.</div><div class="reviewer-loc">Van Nuys, CA</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-label">FAQ</div>
+    <div class="section-title">Common questions.</div>
+    <div class="section-sub">Can't find what you're looking for? Give us a call.</div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <div class="faq-q">Do you use eco-friendly products? <i class="ti ti-chevron-down"></i></div>
+        <div class="faq-a">Yes &mdash; we use non-toxic, eco-friendly cleaning products that are safe for children, pets, and the environment.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I get a quote? <i class="ti ti-chevron-down"></i></div>
+        <div class="faq-a">You can call us at (818) 310-7428 or fill out the contact form on this page. We'll get back to you within a few hours with a flat-rate quote &mdash; no hidden fees.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Are you insured? <i class="ti ti-chevron-down"></i></div>
+        <div class="faq-a">Absolutely. Neat Cleaning Pro is fully licensed and insured so you have peace of mind every time we visit.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need to be home during the clean? <i class="ti ti-chevron-down"></i></div>
+        <div class="faq-a">Not at all. Many customers leave a key or provide entry instructions. Our team is fully background-checked and trustworthy.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What areas do you serve? <i class="ti ti-chevron-down"></i></div>
+        <div class="faq-a">We serve Van Nuys, Sherman Oaks, North Hollywood, Reseda, Panorama City, and surrounding areas in the San Fernando Valley.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner" style="max-width:1000px">
+    <div class="section-label">Contact us</div>
+    <div class="section-title">Let's get your free quote.</div>
+    <div class="section-sub">Fill out the form below or give us a call &mdash; we usually respond within a few hours.</div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get in touch</h3>
+        <p>Whether it's a one-time deep clean or a recurring plan, we're happy to answer any questions and provide a transparent, flat-rate quote.</p>
+        <div class="info-row"><i class="ti ti-phone"></i> (818) 310-7428</div>
+        <div class="info-row"><i class="ti ti-mail"></i> info@neatcleaning.pro</div>
+        <div class="info-row"><i class="ti ti-map-pin"></i> Serving Van Nuys &amp; the San Fernando Valley</div>
+        <div class="info-row"><i class="ti ti-clock"></i> Mon&ndash;Sun, 7am&ndash;8pm</div>
+      </div>
+      <form id="contactForm">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(818) 555-0123" required>
+        <label for="service">Service needed</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option>Home cleaning</option>
+          <option>Office cleaning</option>
+          <option>Deep clean</option>
+          <option>Move-in / move-out</option>
+          <option>Window cleaning</option>
+          <option>Recurring plan</option>
+        </select>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us a bit about your space and when you'd like service..."></textarea>
+        <button type="submit" class="btn btn-primary" style="margin-top:6px">Request a free quote</button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>Ready for a spotless home?</h2>
+  <p>Call us today or fill out the form above &mdash; get a free quote in minutes.</p>
+  <a class="phone-big" href="tel:8183107428">(818) 310-7428</a>
+  <a href="#contact" class="btn btn-white" style="font-size:16px;padding:14px 36px">Get your free quote</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><i class="ti ti-spray"></i> Neat Cleaning Pro</div>
+      <p style="font-size:14px;line-height:1.7;max-width:320px">Professional, eco-friendly cleaning for homes and businesses across the San Fernando Valley. Fully insured and background-checked.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick links</h4>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:8183107428">(818) 310-7428</a></li>
+        <li><a href="mailto:info@neatcleaning.pro">info@neatcleaning.pro</a></li>
+        <li>Van Nuys, CA</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; <span id="year"></span> Neat Cleaning Pro. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // FAQ accordion
+  document.getElementById('faqList').addEventListener('click', function(e){
+    const item = e.target.closest('.faq-item');
+    if(!item) return;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+
+  // Contact form (static demo - replace action with real backend/Formspree/etc.)
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const status = document.getElementById('formStatus');
+    status.style.display = 'block';
+    status.style.color = '#0F6E56';
+    status.textContent = 'Thanks! Your request has been received \u2014 we will reach out shortly.';
+    e.target.reset();
+  });
+
+  // Mobile menu placeholder (simple alert-free toggle could be expanded later)
+  document.getElementById('mobileToggle').addEventListener('click', function(){
+    window.location.href = '#contact';
+  });
+</script>
+
+</body>
+</html>
